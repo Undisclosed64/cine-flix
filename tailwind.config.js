@@ -8,6 +8,8 @@ export default {
       yellow: "#ffd62c",
       darkgrey: "#748394",
       darkblue2: "#323945",
+      darkblue3: "#0a101c",
+      white: "#eeeeee",
     },
     extend: {},
   },
