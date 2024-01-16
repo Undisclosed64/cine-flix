@@ -17,7 +17,7 @@ export const Navbar = () => {
     setShowCart(false);
   };
   return (
-    <div className="header bg-darkblue py-3 px-4 sm:px-10 flex justify-between items-center">
+    <div className="header bg-darkblue py-3 px-4 sm:px-10 flex justify-between items-center fixed w-full">
       <div className="text-2xl text-white flex items-center gap-2">
         <RiMovie2Line className="text-yellow" />
         CineFlix
@@ -26,7 +26,9 @@ export const Navbar = () => {
         <IoIosNotificationsOutline className="" />
         <div className="relative">
           <div onClick={openCart} className="cursor-pointer">
-            <PiShoppingCartLight />
+            <PiShoppingCartLight
+              className={`${showCart ? "text-white" : "text-inherit"}`}
+            />
           </div>
           {items.length > 0 && (
             <div className="cart-counter absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-yellow text-darkblue rounded-full w-4 h-4 flex items-center justify-center text-xs">
