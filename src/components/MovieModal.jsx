@@ -8,6 +8,7 @@ import { useCartContext } from "../CartContext";
 export const MovieModal = ({ id, closeModal }) => {
   const [movie, setMovie] = useState(null);
   const { addMovie } = useCartContext();
+  const isMobileScreen = window.innerWidth <= 640;
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -38,13 +39,13 @@ export const MovieModal = ({ id, closeModal }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden bg-black bg-opacity-80">
       {movie ? (
-        <div className="flex w-full max-w-2xl bg-[#1f2937] p-6 border border-darkblue2 rounded text-darkgrey">
-          <div className="w-2/5 mr-6">
+        <div className="flex flex-col sm:flex-row w-full max-w-xs sm:max-w-2xl bg-[#1f2937] p-2 sm:p-6 border border-darkblue2 rounded text-darkgrey overflow-y-auto max-h-full">
+          <div className="w-full sm:w-2/5 mr-6 mb-4 sm:mb-0">
             <div className="img-wrapper flex flex-col gap-4">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt=""
-                className=""
+                className="w-full"
               />
               <button
                 className="bg-yellow text-[#1e2c34] p-2 rounded font-semibold flex items-center justify-center gap-1"
@@ -56,7 +57,7 @@ export const MovieModal = ({ id, closeModal }) => {
             </div>
           </div>
 
-          <div className="content-wrapper w-3/5">
+          <div className="content-wrapper w-full sm:w-3/5">
             <h1 className="text-[#e6e8e9] text-2xl font-semibold mb-2">
               {movie.title}
             </h1>
@@ -88,7 +89,9 @@ export const MovieModal = ({ id, closeModal }) => {
             </div>
             <p className="">{movie.overview}</p>
           </div>
-          <div className="">
+          <div
+            className={`${isMobileScreen ? "absolute top-0 right-0 p-2" : ""}`}
+          >
             <button
               className=""
               onClick={(e) => {
