@@ -38,7 +38,7 @@ export const MovieModal = ({ id, closeModal }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden bg-black bg-opacity-80">
+    <div className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden bg-black bg-opacity-70 backdrop-blur-sm">
       {movie ? (
         <div className="flex flex-col sm:flex-row w-full max-w-xs sm:max-w-2xl bg-[#1f2937] p-2 sm:p-6 border border-darkblue2 rounded text-darkgrey overflow-y-auto max-h-full">
           <div className="w-full sm:w-2/5 mr-6 mb-4 sm:mb-0">
