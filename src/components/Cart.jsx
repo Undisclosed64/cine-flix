@@ -10,7 +10,7 @@ const Cart = ({ closeCart }) => {
   };
 
   return (
-    <div className="fixed top-12 right-20 bottom-4 bg-[#1f2937] p-4 w-1/3 max-w-sm border border-darkblue2 rounded h-fit text-[#6b7280]">
+    <div className="fixed top-12 left-1/2 sm:left-auto sm:max-w-sm transform -translate-x-1/2  sm:transform-none sm:-translate-x-0 bottom-4 bg-[#1f2937] p-4 w-full sm:right-20 md:w-1/3 max-w-xs border border-darkblue2 rounded h-fit text-[#6b7280]">
       {items.map((movie) => (
         <div
           key={movie.id}
