@@ -45,6 +45,8 @@ export const Movies = () => {
   }, []);
 
   const openModal = (movieId) => {
+    document.body.classList.add("overflow-hidden");
+
     setOpenModals((prevModals) => ({
       ...prevModals,
       [movieId]: true,
@@ -52,6 +54,8 @@ export const Movies = () => {
   };
 
   const closeModal = (movieId) => {
+    document.body.classList.remove("overflow-hidden");
+
     setOpenModals((prevModals) => ({
       ...prevModals,
       [movieId]: false,
