@@ -14,8 +14,8 @@ const Cart = ({ closeCart }) => {
     <div className="fixed top-12 left-1/2 sm:left-auto sm:max-w-sm transform -translate-x-1/2  sm:transform-none sm:-translate-x-0 bottom-4 bg-[#1f2937] p-4 w-full sm:right-20 md:w-1/3 max-w-xs border border-darkblue2 rounded h-fit text-[#6b7280] z-50">
       {items.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-4">
-          <p className="text-[#e6e8e9] text-3xl">Your cart is empty.</p>
-          <BsCartX className="text-6xl" />
+          <p className="text-2xl">Your cart is empty.</p>
+          <BsCartX className="text-4xl" />
 
           <button
             className="absolute top-2 right-2 text-darkgrey focus:outline-none text-2xl"
