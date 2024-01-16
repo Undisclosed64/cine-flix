@@ -65,7 +65,7 @@ export const Movies = () => {
   };
 
   return (
-    <div className="movies-wrapper grid grid-cols-4 gap-4 p-10 bg-black">
+    <div className="movies-wrapper grid grid-cols-1 	sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-4 p-4 sm:p-10 bg-black place-items-center sm:place-items-start">
       {movies.map((movie) => {
         const firstGenre = genre.genres.find((item) =>
           movie.genre_ids.includes(item.id)
@@ -74,13 +74,13 @@ export const Movies = () => {
         return (
           <div
             key={movie.id}
-            className=" bg-darkblue3 rounded border border-darkblue"
+            className="bg-darkblue3 hover:bg-[#1f2937]  cursor-pointer rounded border border-darkblue w-[350px] sm:w-auto"
             onClick={() => openModal(movie.id)}
           >
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt=""
-              className="rounded-t"
+              className="rounded-t h-[350px] sm:h-auto w-full  sm:w-auto object-cover sm:object-contain"
             />
 
             <div className="content p-3 flex flex-col justify-between">
@@ -101,14 +101,14 @@ export const Movies = () => {
               </div>
               <div className="buttons text-darkgrey flex gap-2 items-end">
                 <button
-                  className=" border bg-yellow text-black p-2 rounded font-semibold flex items-center justify-center gap-1 w-1/2"
+                  className=" border bg-yellow text-black p-2 rounded font-semibold flex items-center justify-center gap-1 w-1/2 md:w-2/5 lg:w-1/2"
                   onClick={(e) => handleAddToCart(e, movie)}
                 >
                   <PiShoppingCartBold className="text-xl" />
                   Add
                 </button>
                 <button
-                  className="w-1/2 border  border-darkblue2 p-2 rounded text-[#e6e8e9]"
+                  className="w-1/2 md:w-3/5 lg:w-1/2 border  border-darkblue2 p-2 rounded text-[#e6e8e9]"
                   onClick={() => openModal(movie.id)}
                 >
                   View details
