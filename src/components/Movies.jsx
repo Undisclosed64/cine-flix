@@ -23,11 +23,7 @@ export const Movies = () => {
           },
         }
       );
-      const updatedMovies = response.data.results.map((movie) => ({
-        ...movie,
-        isAdded: false,
-      }));
-      setMovies(updatedMovies);
+      setMovies(response.data.results);
     };
     fetchMovies();
   }, []);
