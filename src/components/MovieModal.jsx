@@ -4,6 +4,7 @@ import { PiShoppingCartBold } from "react-icons/pi";
 import { IoStar } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useCartContext } from "../CartContext";
+import { RotatingLines } from "react-loader-spinner";
 
 export const MovieModal = ({ id, closeModal }) => {
   const [movie, setMovie] = useState(null);
@@ -22,7 +23,7 @@ export const MovieModal = ({ id, closeModal }) => {
         }
       );
       setMovie(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     };
     fetchMovie();
   }, []);
@@ -104,7 +105,17 @@ export const MovieModal = ({ id, closeModal }) => {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <RotatingLines
+          visible={true}
+          height="96"
+          width="96"
+          color="#ffd62c"
+          strokeWidth="5"
+          animationDuration="0.75"
+          ariaLabel="rotating-lines-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
       )}
     </div>
   );
