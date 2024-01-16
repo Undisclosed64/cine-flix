@@ -32,19 +32,6 @@ export const Movies = () => {
     fetchMovies();
   }, []);
 
-  const openModal = (movieId) => {
-    setOpenModals((prevModals) => ({
-      ...prevModals,
-      [movieId]: true,
-    }));
-  };
-
-  const closeModal = (movieId) => {
-    setOpenModals((prevModals) => ({
-      ...prevModals,
-      [movieId]: false,
-    }));
-  };
   useEffect(() => {
     const fetchGenres = async () => {
       const response = await axios.get(
@@ -61,16 +48,24 @@ export const Movies = () => {
     fetchGenres();
   }, []);
 
+  const openModal = (movieId) => {
+    setOpenModals((prevModals) => ({
+      ...prevModals,
+      [movieId]: true,
+    }));
+  };
+
+  const closeModal = (movieId) => {
+    setOpenModals((prevModals) => ({
+      ...prevModals,
+      [movieId]: false,
+    }));
+  };
+
   const handleAddToCart = (e, movie) => {
     e.stopPropagation();
     movie.price = 16.99;
     addMovie(movie);
-    setMovies((prevMovies) => {
-      const updatedMovies = prevMovies.map((m) =>
-        m.id === movie.id ? { ...m, isAdded: true } : m
-      );
-      return updatedMovies;
-    });
   };
 
   return (
@@ -126,7 +121,7 @@ export const Movies = () => {
                     onClick={(e) => handleAddToCart(e, movie)}
                   >
                     <PiShoppingCartBold className="text-xl" />
-                    {movie.isAdded ? "Added" : "Add"}
+                    Add
                   </button>
                   <button
                     className="w-1/2 md:w-3/5 lg:w-1/2 border border-darkblue2 p-2 rounded text-[#e6e8e9]"
