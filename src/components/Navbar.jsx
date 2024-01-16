@@ -15,7 +15,7 @@ export const Navbar = () => {
     setShowCart(false);
   };
   return (
-    <div className="header bg-darkblue py-2 px-10 flex justify-between">
+    <div className="header bg-darkblue py-2 px-4 sm:px-10 flex justify-between">
       <div className="text-2xl text-white flex items-center gap-2">
         <RiMovie2Line className="text-yellow" />
         CineFlix
