@@ -74,7 +74,7 @@ export const Movies = () => {
   };
 
   return (
-    <div className="movies-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-4 p-4 sm:p-10 bg-black place-items-center sm:place-items-start">
+    <div className="movies-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-4 px-4 py-20 sm:px-10 bg-black place-items-center sm:place-items-start ">
       {movies.length === 0 ? (
         <div className="h-screen w-screen flex items-center justify-center">
           <RotatingLines
