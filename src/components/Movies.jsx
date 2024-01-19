@@ -84,9 +84,9 @@ export const Movies = () => {
         </div>
       ) : (
         movies.map((movie) => {
-          const firstGenre = genre.genres.find((item) =>
-            movie.genre_ids.includes(item.id)
-          );
+          const firstGenre =
+            genre.genres &&
+            genre.genres.find((item) => movie.genre_ids.includes(item.id));
 
           return (
             <div
